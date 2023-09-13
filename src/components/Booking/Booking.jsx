@@ -45,7 +45,7 @@ const Booking = ({ tour, avgRating }) => {
                 headers:{
                     'content-type':'application/json'
                 },
-                credentials:'include',
+                // credentials:'include',
                 body:JSON.stringify(booking)
             })
             const result = await res.json();

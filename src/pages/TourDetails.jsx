@@ -35,8 +35,12 @@ const TourDetails = () => {
 
     //to call submit for database
     try {
-      if(!user || user === undefined || user === null)
-      alert('Please Sign In!!!');
+      if (!user || !user.username) {
+        // Check if the user is not logged in or if the username is missing
+        alert('Please Sign In!!!');
+        return;
+      }
+  
       
       const reviewObj = {
         username: user?.username,
@@ -48,7 +52,7 @@ const TourDetails = () => {
         headers:{
           'content-type':'application/json'
         },
-        credentials:'include',
+        // credentials:'include',
         body:JSON.stringify(reviewObj)
       });
 
