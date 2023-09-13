@@ -1,18 +1,22 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './newsletter.css';
 import { Container, Row, Col } from 'reactstrap';
 import maleTourist from '../assets/images/male-tourist.png';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
 const Newsletter = () => {
-  const navigate = useNavigate(); // Create a navigate function
-
-  const handleSubscribe = () => {
-    // Perform any subscription logic here if needed
-
-    // Redirect to the home page
-    navigate('/home');
-  };
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []); // Run this effect only once after initial render
+  
+    const handleSubscribe = () => {
+      // Perform any subscription logic here if needed
+  
+      // Redirect to the home page
+      navigate('/');
+    };
 
   return (
     <section className='newsletter'>
